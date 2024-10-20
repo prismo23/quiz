@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Wave Energy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">🌊 WaveEnergy</div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#lesson1">Lesson 1</a></li>
+            <li><a href="#lesson2">Lesson 2</a></li>
+            <li><a href="#lesson3">Lesson 3</a></li>
+            <li><a href="#quiz" id="quiz-link" class="disabled-link">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section parallax">
+        <div class="hero">
+            <h1 class="wave-text">Welcome to Ocean Wave Energy</h1>
+            <p>Learn about ocean waves, complete the lessons, and test your knowledge with the quiz!</p>
+        </div>
+    </section>
+
+    <!-- Lesson 1: What is Ocean Wave Energy? -->
+    <section id="lesson1" class="section lesson">
+        <h2 class="wave-title">Lesson 1: What is Ocean Wave Energy?</h2>
+        <p>
+            Ocean wave energy, also known as wave power, captures the energy produced by surface waves to generate electricity. 
+            It is a type of renewable energy that leverages both the kinetic and potential energy of waves.
+            As wind moves over the ocean surface, it transfers energy to the water, creating waves that can be harnessed for power generation.
+        </p>
+
+        <!-- Embedded YouTube Video -->
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/8miWW2QyN_4?start=1" 
+                title="Ocean Wave Energy Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Ocean Wave Characteristics -->
+        <h3>Key Characteristics of Ocean Waves</h3>
+        <p>
+            - <strong>Wave Height (Amplitude):</strong> The vertical distance between the wave crest and trough.<br>
+            - <strong>Wavelength:</strong> The horizontal distance between two successive crests or troughs.<br>
+            - <strong>Wave Period:</strong> The time it takes for two consecutive crests to pass a given point.<br>
+            - <strong>Wave Frequency:</strong> The number of wave cycles passing a fixed point per unit time.
+        </p>
+
+        <!-- Ocean Wave Energy Formula -->
+        <h3>Formula for Ocean Wave Energy</h3>
+        <div class="formula-box">
+            <p><strong>Wave Energy per Unit Length:</strong></p>
+            <p><em>E = (1/8) ρ g H<sup>2</sup></em></p>
+            <p>
+                Where:<br>
+                E = Energy per unit length (Joules/meter)<br>
+                ρ = Water density (approx. 1025 kg/m³ for seawater)<br>
+                g = Acceleration due to gravity (9.81 m/s²)<br>
+                H = Wave height (in meters)
+            </p>
+        </div>
+
+        <!-- Wave Power Formula -->
+        <h3>Wave Power per Unit Length</h3>
+        <div class="formula-box">
+            <p><strong>Wave Power per Unit Length:</strong></p>
+            <p><em>P = (ρ g² / 64π) H<sub>m0</sub><sup>2</sup> T<sub>e</sub> ≈ (0.5 kW / m³·s) H<sub>m0</sub><sup>2</sup> T<sub>3</sub></em></p>
+            <p>
+                Where:<br>
+                P = Wave power per unit length (in kW/m)<br>
+                ρ = Water density (approx. 1025 kg/m³)<br>
+                g = Acceleration due to gravity (9.81 m/s²)<br>
+                H<sub>m0</sub> = Significant wave height (in meters)<br>
+                T<sub>e</sub> = Energy period (in seconds)<br>
+                T<sub>3</sub> = Mean wave period of the highest one-third of waves (in seconds)
+            </p>
+        </div>
+
+        <button class="lesson-complete-btn" onclick="markLessonComplete(1)">Mark as Complete</button>
+    </section>
+
+    <!-- Lesson 2: Benefits of Ocean Wave Energy -->
+    <section id="lesson2" class="section lesson">
+        <h2 class="wave-title">Lesson 2: Benefits of Ocean Wave Energy</h2>
+        <p>
+            Wave energy offers several benefits as a renewable energy source:<br>
+            - <strong>Sustainability:</strong> Wave energy is a sustainable and renewable source of power.<br>
+            - <strong>High Energy Density:</strong> Compared to other renewable sources, wave energy has a higher energy density.<br>
+            - <strong>Reduced Emissions:</strong> It helps reduce greenhouse gas emissions, combating climate change.<br>
+            - <strong>Job Creation:</strong> It creates jobs in the renewable energy sector, from installation to maintenance.
+        </p>
+        <button class="lesson-complete-btn" onclick="markLessonComplete(2)">Mark as Complete</button>
+    </section>
+
+    <!-- Lesson 3: Types of Wave Energy Devices -->
+    <section id="lesson3" class="section lesson">
+        <h2 class="wave-title">Lesson 3: Types of Wave Energy Devices</h2>
+        <p>
+            Different technologies capture and convert wave energy into electricity:<br>
+            - <strong>Point Absorbers:</strong> Devices floating on the surface, capturing energy from all directions.<br>
+            - <strong>Oscillating Water Columns:</strong> Chambers converting wave motion into air pressure, driving turbines.<br>
+            - <strong>Overtopping Devices:</strong> Structures that collect wave water and release it through turbines.<br>
+            - <strong>Wave Attenuators:</strong> Snake-like structures that convert wave motion into hydraulic pressure.
+        </p>
+        <button class="lesson-complete-btn" onclick="markLessonComplete(3)">Mark as Complete</button>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section quiz-section">
+        <h2 class="wave-title">Test Your Knowledge</h2>
+
+        <!-- User Info Input -->
+        <div class="user-info-container">
+            <input type="text" id="user-name" placeholder="Enter your name" class="user-input">
+            <input type="email" id="user-email" placeholder="Enter your email" class="user-input">
+        </div>
+
+        <div class="quiz-container">
+            <!-- Quiz Questions (1-10) -->
+            <div class="quiz-card"><p>1. What is the main driver of wave energy?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Wind energy from the sun</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Moon's gravitational pull</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Seismic activity</button></div>
+            <div class="quiz-card"><p>2. Which of these is a type of wave energy device?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Oscillating Water Columns</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Solar panels</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Coal-fired plants</button></div>
+            <div class="quiz-card"><p>3. What is a benefit of wave energy?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Sustainable energy source</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">High greenhouse emissions</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Finite resource</button></div>
+            <div class="quiz-card"><p>4. Which unit measures wave energy?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Joules/meter</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Watt</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Volts</button></div>
+            <div class="quiz-card"><p>5. What does \(H_{m0}\) represent in the wave power formula?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Significant wave height</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Wave period</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Wavelength</button></div>
+            <div class="quiz-card"><p>6. What is the energy period in wave energy terms?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Mean wave period</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Wave height</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Wavelength</button></div>
+            <div class="quiz-card"><p>7. What is the main goal of wave energy devices?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Convert wave motion to electricity</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Capture solar energy</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Reduce wind currents</button></div>
+            <div class="quiz-card"><p>8. Which wave device is snake-like and bends with waves?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Wave Attenuator</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Point Absorber</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Overtopping Device</button></div>
+            <div class="quiz-card"><p>9. What unit is wave power measured in?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">kW/m</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Volts</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Ampere</button></div>
+            <div class="quiz-card"><p>10. How does wave height affect wave energy?</p><button class="quiz-option" onclick="selectAnswer(this, 'correct')">Energy increases exponentially</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">No effect</button><button class="quiz-option" onclick="selectAnswer(this, 'incorrect')">Energy decreases linearly</button></div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="lesson-complete-btn" onclick="submitQuiz()">Submit Quiz</button>
+
+        <!-- Score Display -->
+        <div class="score-container hidden" id="score-container">
+            <h3 id="user-info-display"></h3>
+            <h3 id="final-score"></h3>
+        </div>
+    </section>
+
+    <!-- JavaScript for interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>
